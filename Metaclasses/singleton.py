@@ -26,11 +26,24 @@ def singleton(myClass):
 		return instances[myClass]
 	return getInstance
 
-@singleton
-class Test(object):
-	pass
+print add1(3)
 
-x = Test()
-x = 2
-y = Test()
-print y
+# @singleton
+# class Test(object):
+# 	pass
+
+# x = Test()
+# x = 2
+# y = Test()
+# print y
+
+def printInputs(fn):
+	def func(*args, **kwargs):
+		print(args)
+		print(kwargs)
+		return fn(*args, **kwargs)
+	return func
+
+@printInputs
+def add1(n):
+	return n +1;
