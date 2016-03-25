@@ -19,6 +19,6 @@ start = time.time()
 my_nums = (x*x for x in range(1000))		# parantheses changed - it's a generator now
 
 # test
-print my_nums				
+print my_nums
 print "Time took: ", time.time() - start # time = 4.79221343994e-05 
 

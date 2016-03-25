@@ -24,10 +24,7 @@ class doMagic(type):
 	def __init__(cls, futureClass, parent, attr):
 		print "This is working oh yey"
 
-
-
-
-class NineteeneightyFour(object):
+class Magic(object):
 	__metaclass__ = doMagic
 	def __init__(self):
 		self.a = a
