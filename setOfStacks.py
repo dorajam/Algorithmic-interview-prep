@@ -25,11 +25,17 @@ class SetOfStacks(object):
         if self.current_size == 0:
             self.getLastStack()
             self.list_of_stacks.pop()
+            self.counter -= 1
         self.current_size -=1
         print self.stack.pop()
 
     def getLastStack(self):
         self.stack = self.list_of_stacks[-1]
+
+    def popAt(self, index):
+        if index == self.counter:
+            self.pop()
+        print self.list_of_stacks[index].pop()
 
 # ---------------- test cases ----------------
 # stacks = SetOfStacks()
@@ -39,10 +45,15 @@ class SetOfStacks(object):
 # print stacks.list_of_stacks
 # stacks.push(3)
 # stacks.push(4)
+# stacks.push(5)
+# stacks.push(5)
+# stacks.push(6)
+# stacks.push(6)
 # print stacks.stack
 # print stacks.list_of_stacks
-# stacks.pop()
-# stacks.pop()
-# stacks.pop()
+# # stacks.pop()
+# print stacks.stack
+# print stacks.list_of_stacks
+# stacks.popAt(1)
 # print stacks.stack
 # print stacks.list_of_stacks
