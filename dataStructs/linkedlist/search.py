@@ -35,6 +35,18 @@ class LinkedList(object):
         # new_node.set_next = head
         self.head = new_node
 
+    def insert_at(self,element,index):
+        current  = self.head
+        prev = None
+        while index != 0:
+            print 'currently looking at: ', current.get_val()
+            prev = current
+            current = current.get_next()
+            index -= 1
+        new_node = Node(element,current)
+        prev = new_node
+        # print prev.get_val(), current.get_val()
+
     def get_size(self):
         counter = 1
         while self.head.get_next():
@@ -75,9 +87,12 @@ class LinkedList(object):
 ll = LinkedList(3)
 ll.insert(4)
 ll.insert(7)
+ll.insert(9)
 print ll.head.value
 print ll.head.get_next().value
 # print ll.get_size()
 print 'searching...', ll.search(3)
 print 'deleting...', ll.delete(3)
-print ll.head.next_node.get_next()
+
+ll.insert_at(5, 2)
+
