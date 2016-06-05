@@ -17,10 +17,8 @@ class Node(object):
     def set_next(self, node):
         self.next_node = node
 
-
-head = 5
-# linkedlist = [5,3,4,5,6]
-
+######## test with ########
+# head = 5
 # linkedList = Node(head)
 # print linkedList.get_val()
 # print linkedList.next_node
@@ -36,6 +34,7 @@ class LinkedList(object):
         self.head = new_node
 
     def insert_at(self,element,index):
+        ''' pushes element at index '''
         current  = self.head
         prev = None
         while index != 0:
@@ -83,7 +82,7 @@ class LinkedList(object):
         return "Element wasn't found"
 
 
-
+######## test with ########
 ll = LinkedList(3)
 ll.insert(4)
 ll.insert(7)
