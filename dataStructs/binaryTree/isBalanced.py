@@ -3,7 +3,9 @@ import isValid
 
 
 def isLeaf(root):
-    return not (root.right or root.left)
+    if not root:
+        return True
+    return False
 
 def getDepth(root):
     if not root:
@@ -17,7 +19,9 @@ def getDepth(root):
 def isBalanced(root):
     if isLeaf(root):
         return True
-    return abs(getDepth(root.right) - getDepth(root.left)) <= 1
+    if abs(getDepth(root.right) - getDepth(root.left)) > 1:
+        return False
+    return isBalanced(root.right) and isBalanced(root.left)
 
 # to test
 print isBalanced(isValid.tree)
