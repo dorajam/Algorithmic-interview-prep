@@ -13,7 +13,6 @@ class BinaryTreeNode:
         self.right = BinaryTreeNode(value)
         return self.right
 
-# import ipdb; ipdb.set_trace()
 
 def isValid(root, lower = -float('inf'), upper = float('inf')):
     ''' A binary search tree is valid if the left node is always less than, and the right node is always greater than the parent node'''
